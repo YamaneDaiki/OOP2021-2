@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{86DD141B-DE3B-478E-AB82-1B2C25B7D548}</ProjectGuid>
+    <ProjectGuid>{22CD95DC-C628-460D-8B56-538C40AAF28B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>DistanceConverter</RootNamespace>
     <AssemblyName>DistanceConverter</AssemblyName>
