@@ -13,6 +13,20 @@ namespace SalesCalculator {
         public SalesCounter(List<Sale> sales) {
             _sales = sales;
         }
+        //LIst 2-17
+        //売上データを読み込み、Saleオブジェクトのリストを返す
+        public Dictionary<string,int> GetPerStoreSales() {
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            foreach (Sale sale in _sales) {
+                if (dict.ContainsKey(sale.ShopName)) 
+                    //既にコレクションに店舗が設定されている
+                    dict[sale.ShopName] += sale.Amoount;
+                else
+                    //コレクションへ店舗を登録
+                    dict[sale.ShopName] = sale.Amoount;
+            }
+            return dict;
+        }
 
     }
 }
