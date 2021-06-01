@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DistanceConverter {
-     //フィートとメートルの単位変更クラス(静的クラス)
-     public static class FeetConverter {
+     //インチとメートルの単位変更クラス(静的ラス)
+     public static class DistanceConverter {
         private const double ratio = 0.3048;
-         //メートルからフィートを求める
+         //メートルからインチを求める
          public static double FromMeter(double meter) {
              return meter / ratio;
          }
 
-         //フィートからメートルを求める
+         //インチからメートルを求める
          public static double ToMeter(double feet) {
              return feet * ratio;
          }
