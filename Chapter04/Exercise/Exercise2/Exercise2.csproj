@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -50,6 +51,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\DistanceConverter\DistanceConverter.csproj">
+      <Project>{22cd95dc-c628-460d-8b56-538c40aaf28b}</Project>
+      <Name>DistanceConverter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Section01\Section01.csproj">
+      <Project>{117f0be2-e61d-421d-b2c0-478dd0cac976}</Project>
+      <Name>Section01</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Exercise1\Exercise1.csproj">
       <Project>{311b55bc-d178-4c64-8c1a-a049abd36e3d}</Project>
       <Name>Exercise1</Name>
