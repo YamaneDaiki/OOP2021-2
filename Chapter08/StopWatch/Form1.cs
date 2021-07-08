@@ -13,7 +13,7 @@ namespace StopWatch {
     public partial class Form1 : Form {
         //時間計測のストップウォッチオブジェクト
         Stopwatch sw = new Stopwatch();
-
+        Timer tm = new Timer();
         public Form1() {
             InitializeComponent();
         }
@@ -23,14 +23,30 @@ namespace StopWatch {
         }
 
         private void StartButton_Click(object sender, EventArgs e) {
-            Timer tm = new Timer();
-            tm.Tick += Tm_Tick;
-            tm.Interval = 1000;
             tm.Start();
+            tm.Tick += Tm_Tick;
         }
 
         private void Tm_Tick(object sender, EventArgs e) {
-            //TimerLabel.Text = 
+            sw.Start();
+            TimerLabel.Text = sw.Elapsed.ToString(@"hh\:mm\:ss\,ff");
         }
+
+        private void StopButton_Click(object sender, EventArgs e) {
+            tm.Stop();
+        }
+
+        private void ResetButton_Click(object sender, EventArgs e) {
+            sw.Reset();
+            tm.Stop();
+            TimerLabel.Text = sw.Elapsed.ToString(@"hh\:mm\:ss\,ff");
+            listBox1.Items.Clear(); 
+        }
+
+        private void RapButton_Click(object sender, EventArgs e) {
+            listBox1.Items.Insert(0, TimerLabel.Text);
+        }
+
+     
     }
 }
