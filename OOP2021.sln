@@ -75,6 +75,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise2", "Chapter09\Exer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise3", "Chapter09\Exercise3\Exercise3.csproj", "{41B4E095-C4E8-43D4-9C27-D6406757142C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F2A97915-E3F0-4481-BD18-D5F2E8E23790}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanpuru0823", "Sanpuru0823\Sanpuru0823.csproj", "{8F42338D-3027-473A-8812-3B6D05590AE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -177,6 +184,10 @@ Global
 		{41B4E095-C4E8-43D4-9C27-D6406757142C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41B4E095-C4E8-43D4-9C27-D6406757142C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41B4E095-C4E8-43D4-9C27-D6406757142C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F42338D-3027-473A-8812-3B6D05590AE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F42338D-3027-473A-8812-3B6D05590AE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F42338D-3027-473A-8812-3B6D05590AE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F42338D-3027-473A-8812-3B6D05590AE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
