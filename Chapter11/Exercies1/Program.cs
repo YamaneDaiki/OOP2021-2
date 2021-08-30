@@ -15,7 +15,7 @@ namespace Exercies1 {
             Exercies1_2(file);
             Console.WriteLine("----------");
 
-            Exercies1_3(file);
+            Exercise1_3(file);
             Console.WriteLine("----------");
 
         }
@@ -23,6 +23,7 @@ namespace Exercies1 {
         private static void Exercies1_1(string file) {
             var xdoc = XDocument.Load(file);
             var sample1 = xdoc.Root.Elements();
+
             foreach (var sample in sample1) {
                 var xname = sample.Element("name");
                 var team = sample.Element("teammembers");
@@ -33,6 +34,7 @@ namespace Exercies1 {
         private static void Exercies1_2(string file) {
             var xdoc = XDocument.Load(file);
             var sample2 = xdoc.Root.Elements().OrderBy(x => (string)x.Element("firstplayed"));
+
             foreach (var sample in sample2) {
                 var xname = sample.Element("name").Attribute("kanji");
                 Console.WriteLine(xname.Value);
