@@ -12,17 +12,23 @@ using System.Xml.Linq;
 
 namespace Section04 {
     class Program {
+        Dictionary<string, int> AreaDic = new Dictionary<string, int>() {
+            { "前橋",4210},
+            { "みなかみ",4220},
+            { "宇都宮",4110},
+            { "水戸",4010}
+        };
+
         static void Main(string[] args) {
             new Program();
         }
-
-
 
         //コンストラクタ
         public Program() {
 
             Console.WriteLine("地域コード入力");
             Console.WriteLine("");
+
             Console.WriteLine("1:前橋");
             Console.WriteLine("");
             Console.WriteLine("2:みなかみ");
@@ -32,6 +38,8 @@ namespace Section04 {
             Console.WriteLine("4:水戸");
             Console.WriteLine("");
             Console.WriteLine("9:その他（直接入力");
+
+
 
 
             Console.Write(">");
