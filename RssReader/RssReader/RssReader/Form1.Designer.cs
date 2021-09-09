@@ -35,7 +35,7 @@ namespace RssReader {
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(33, 18);
+            this.label1.Location = new System.Drawing.Point(33, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 20);
             this.label1.TabIndex = 0;
@@ -43,25 +43,27 @@ namespace RssReader {
             // 
             // tbUrl
             // 
-            this.tbUrl.Location = new System.Drawing.Point(171, 19);
+            this.tbUrl.Location = new System.Drawing.Point(139, 17);
+            this.tbUrl.Multiline = true;
             this.tbUrl.Name = "tbUrl";
-            this.tbUrl.Size = new System.Drawing.Size(529, 22);
+            this.tbUrl.Size = new System.Drawing.Size(586, 34);
             this.tbUrl.TabIndex = 1;
             // 
             // ibTitles
             // 
             this.ibTitles.FormattingEnabled = true;
             this.ibTitles.ItemHeight = 15;
-            this.ibTitles.Location = new System.Drawing.Point(13, 51);
+            this.ibTitles.Location = new System.Drawing.Point(13, 66);
             this.ibTitles.Name = "ibTitles";
-            this.ibTitles.Size = new System.Drawing.Size(151, 394);
+            this.ibTitles.Size = new System.Drawing.Size(193, 454);
             this.ibTitles.TabIndex = 2;
+            this.ibTitles.Click += new System.EventHandler(this.ibTitles_Click);
             // 
             // btRead
             // 
-            this.btRead.Location = new System.Drawing.Point(707, 17);
+            this.btRead.Location = new System.Drawing.Point(757, 17);
             this.btRead.Name = "btRead";
-            this.btRead.Size = new System.Drawing.Size(93, 23);
+            this.btRead.Size = new System.Drawing.Size(105, 34);
             this.btRead.TabIndex = 3;
             this.btRead.Text = "読み込み";
             this.btRead.UseVisualStyleBackColor = true;
@@ -69,18 +71,18 @@ namespace RssReader {
             // 
             // wbBrowser
             // 
-            this.wbBrowser.Location = new System.Drawing.Point(170, 51);
+            this.wbBrowser.Location = new System.Drawing.Point(212, 66);
             this.wbBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbBrowser.Name = "wbBrowser";
             this.wbBrowser.ScriptErrorsSuppressed = true;
-            this.wbBrowser.Size = new System.Drawing.Size(629, 394);
+            this.wbBrowser.Size = new System.Drawing.Size(650, 454);
             this.wbBrowser.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 450);
+            this.ClientSize = new System.Drawing.Size(901, 534);
             this.Controls.Add(this.wbBrowser);
             this.Controls.Add(this.btRead);
             this.Controls.Add(this.ibTitles);

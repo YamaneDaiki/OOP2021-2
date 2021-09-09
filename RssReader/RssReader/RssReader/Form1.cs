@@ -13,6 +13,7 @@ using System.Xml.Linq;
 
 namespace RssReader {
     public partial class Form1 : Form {
+        List<string> rink = new List<string>();
         public Form1() {
             InitializeComponent();
         }
@@ -30,14 +31,20 @@ namespace RssReader {
                 var stream = wc.OpenRead(Url);
 
                 XDocument xdoc = XDocument.Load(stream);
-                var nodes = xdoc.Root.Descendants("title");
+                var nodes = xdoc.Root.Descendants("item");
                 foreach (var node in nodes) {
-                    ibTitles.Items.Add(Regex.Replace(node.Value, "【|】", ""));
+                    ibTitles.Items.Add(node.Element("title").Value);
+                    rink.Add(node.Element("link").Value);
 
                 }
 
 
             }
+        }
+
+        private void ibTitles_Click(object sender, EventArgs e) {
+            var num = ibTitles.SelectedIndex;
+            wbBrowser.Url = new Uri(rink[num]);
         }
     }
 }
