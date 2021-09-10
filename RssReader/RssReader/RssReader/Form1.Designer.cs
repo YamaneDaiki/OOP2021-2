@@ -29,6 +29,7 @@ namespace RssReader {
             this.ibTitles = new System.Windows.Forms.ListBox();
             this.btRead = new System.Windows.Forms.Button();
             this.wbBrowser = new System.Windows.Forms.WebBrowser();
+            this.ladesc = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -78,11 +79,20 @@ namespace RssReader {
             this.wbBrowser.Size = new System.Drawing.Size(650, 454);
             this.wbBrowser.TabIndex = 4;
             // 
+            // ladesc
+            // 
+            this.ladesc.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ladesc.Location = new System.Drawing.Point(868, 66);
+            this.ladesc.Name = "ladesc";
+            this.ladesc.Size = new System.Drawing.Size(161, 454);
+            this.ladesc.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 534);
+            this.ClientSize = new System.Drawing.Size(1067, 707);
+            this.Controls.Add(this.ladesc);
             this.Controls.Add(this.wbBrowser);
             this.Controls.Add(this.btRead);
             this.Controls.Add(this.ibTitles);
@@ -102,6 +112,7 @@ namespace RssReader {
         private System.Windows.Forms.ListBox ibTitles;
         private System.Windows.Forms.Button btRead;
         private System.Windows.Forms.WebBrowser wbBrowser;
+        private System.Windows.Forms.Label ladesc;
     }
 }
 
