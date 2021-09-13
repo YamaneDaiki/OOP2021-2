@@ -13,8 +13,7 @@ using System.Xml.Linq;
 
 namespace RssReader {
     public partial class Form1 : Form {
-        List<string> rink = new List<string>();
-        List<string> desc = new List<string>();
+        IEnumerable<ItemDate> items = null;
 
         public Form1() {
             InitializeComponent();
@@ -33,14 +32,17 @@ namespace RssReader {
                 var stream = wc.OpenRead(Url);
 
                 XDocument xdoc = XDocument.Load(stream);
-                var nodes = xdoc.Root.Descendants("item");
-                foreach (var node in nodes) {
-                    ibTitles.Items.Add(node.Element("title").Value);
-                    rink.Add(node.Element("link").Value);
-                    desc.Add(node.Element("description").Value);
+                items = xdoc.Root.Descendants("item").Select(x => new ItemDate {
+                    Title = (string)x.Element("title"),
+                    Link = (string)x.Element("link"),
+                    PubDate = (DateTime)x.Element("pubDate"),
+                    Description = (string)x.Element("description")
+                });
 
-
+                foreach (var item in items) {
+                    ibTitles.Items.Add(item.Title);
                 }
+
 
 
             }
@@ -48,10 +50,17 @@ namespace RssReader {
 
         private void ibTitles_Click(object sender, EventArgs e) {
             var num = ibTitles.SelectedIndex;
-            ladesc.Text = desc[ num ];
-            wbBrowser.Url = new Uri(rink[num]);
+            string rink = (items.ToArray())[ibTitles.SelectedIndex].Link;
+            string description = (items.ToArray())[ibTitles.SelectedIndex].Description;
+            DateTime day = (items.ToArray())[ibTitles.SelectedIndex].PubDate;
+            ladesc.Text = description;
+            laday.Text = day.ToString("yyyy MM dd  hh時mm分ss秒");
         }
 
- 
+        private void btweb_Click(object sender, EventArgs e) {
+            Form2 form2 = new Form2();
+            form2.weba(items.ToArray()[ibTitles.SelectedIndex].Link);
+            form2.Show();
+        }
     }
 }

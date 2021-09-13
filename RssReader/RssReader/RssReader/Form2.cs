@@ -10,8 +10,17 @@ using System.Windows.Forms;
 
 namespace RssReader {
     public partial class Form2 : Form {
+
         public Form2() {
             InitializeComponent();
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e) {
+
+        }
+
+        public void weba(string s) {
+            webBrowser1.Url = new Uri(s);
         }
     }
 }

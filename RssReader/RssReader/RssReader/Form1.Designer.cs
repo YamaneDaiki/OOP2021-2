@@ -28,8 +28,9 @@ namespace RssReader {
             this.tbUrl = new System.Windows.Forms.TextBox();
             this.ibTitles = new System.Windows.Forms.ListBox();
             this.btRead = new System.Windows.Forms.Button();
-            this.wbBrowser = new System.Windows.Forms.WebBrowser();
             this.ladesc = new System.Windows.Forms.Label();
+            this.laday = new System.Windows.Forms.Label();
+            this.btweb = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +57,7 @@ namespace RssReader {
             this.ibTitles.ItemHeight = 15;
             this.ibTitles.Location = new System.Drawing.Point(13, 66);
             this.ibTitles.Name = "ibTitles";
-            this.ibTitles.Size = new System.Drawing.Size(193, 454);
+            this.ibTitles.Size = new System.Drawing.Size(256, 454);
             this.ibTitles.TabIndex = 2;
             this.ibTitles.Click += new System.EventHandler(this.ibTitles_Click);
             // 
@@ -70,30 +71,41 @@ namespace RssReader {
             this.btRead.UseVisualStyleBackColor = true;
             this.btRead.Click += new System.EventHandler(this.btRead_Click);
             // 
-            // wbBrowser
-            // 
-            this.wbBrowser.Location = new System.Drawing.Point(212, 66);
-            this.wbBrowser.MinimumSize = new System.Drawing.Size(20, 20);
-            this.wbBrowser.Name = "wbBrowser";
-            this.wbBrowser.ScriptErrorsSuppressed = true;
-            this.wbBrowser.Size = new System.Drawing.Size(650, 454);
-            this.wbBrowser.TabIndex = 4;
-            // 
             // ladesc
             // 
+            this.ladesc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ladesc.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ladesc.Location = new System.Drawing.Point(868, 66);
+            this.ladesc.Location = new System.Drawing.Point(287, 184);
             this.ladesc.Name = "ladesc";
-            this.ladesc.Size = new System.Drawing.Size(161, 454);
+            this.ladesc.Size = new System.Drawing.Size(511, 336);
             this.ladesc.TabIndex = 5;
+            // 
+            // laday
+            // 
+            this.laday.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.laday.Location = new System.Drawing.Point(287, 108);
+            this.laday.Name = "laday";
+            this.laday.Size = new System.Drawing.Size(511, 59);
+            this.laday.TabIndex = 6;
+            // 
+            // btweb
+            // 
+            this.btweb.Location = new System.Drawing.Point(848, 272);
+            this.btweb.Name = "btweb";
+            this.btweb.Size = new System.Drawing.Size(116, 42);
+            this.btweb.TabIndex = 7;
+            this.btweb.Text = "webサイト";
+            this.btweb.UseVisualStyleBackColor = true;
+            this.btweb.Click += new System.EventHandler(this.btweb_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 707);
+            this.Controls.Add(this.btweb);
+            this.Controls.Add(this.laday);
             this.Controls.Add(this.ladesc);
-            this.Controls.Add(this.wbBrowser);
             this.Controls.Add(this.btRead);
             this.Controls.Add(this.ibTitles);
             this.Controls.Add(this.tbUrl);
@@ -111,8 +123,9 @@ namespace RssReader {
         private System.Windows.Forms.TextBox tbUrl;
         private System.Windows.Forms.ListBox ibTitles;
         private System.Windows.Forms.Button btRead;
-        private System.Windows.Forms.WebBrowser wbBrowser;
         private System.Windows.Forms.Label ladesc;
+        private System.Windows.Forms.Label laday;
+        private System.Windows.Forms.Button btweb;
     }
 }
 
