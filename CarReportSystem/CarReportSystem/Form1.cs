@@ -216,6 +216,7 @@ namespace CarReportSystem {
             carReportDataGridView.Columns[5].HeaderText = "レポート";
             carReportDataGridView.Columns[6].Visible = false;
 
+            ssErrorLavel.Text = null;
         }
 
         private void carReportBindingNavigatorSaveItem_Click(object sender, EventArgs e) {
@@ -228,9 +229,16 @@ namespace CarReportSystem {
 
         // バイト配列をImageオブジェクトに変換
         public static Image ByteArrayToImage(byte[] b) {
-            ImageConverter imgconv = new ImageConverter();
-            Image img = (Image)imgconv.ConvertFrom(b);
+            Image img = null;
+            if (b.Length > 0) {
+                ImageConverter imgconv = new ImageConverter();
+                img = (Image)imgconv.ConvertFrom(b);
+            }
             return img;
+
+            //ImageConverter imgconv = new ImageConverter();
+            //Image img = (Image)imgconv.ConvertFrom(b);
+            //return img;
         }
 
         // Imageオブジェクトをバイト配列に変換
@@ -243,6 +251,7 @@ namespace CarReportSystem {
         private void carReportDataGridView_SelectionChanged(object sender, EventArgs e) {
             if (carReportDataGridView.CurrentRow == null) return;
             try {
+                ssErrorLavel.Text = null;
                 dtpDate.Value = (DateTime)carReportDataGridView.CurrentRow.Cells[1].Value;    //日付
                 cbAuthor.Text = carReportDataGridView.CurrentRow.Cells[2].Value.ToString();   //記録者
                                                                                               //メーカー（文字列 → 列挙型）
@@ -253,8 +262,10 @@ namespace CarReportSystem {
                 pbPicture.Image = ByteArrayToImage((byte[])carReportDataGridView.CurrentRow.Cells[6].Value);     //画像
 
             }
-            catch (Exception) {
+            catch (InvalidCastException) {
                 pbPicture.Image = null;
+            }catch (Exception ex){
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -270,6 +281,8 @@ namespace CarReportSystem {
             tbReport.Text = null;
             pbPicture.Image = null;
         }
+
+        
     }
 
 }
