@@ -56,8 +56,7 @@ namespace CarReportSystem {
             listCarReport.Add(carReport);   //１レコード追加
 
             //コンボボックスの履歴登録
-            setCbAuthor(cbAuthor.Text);
-            setCbCarName(cbCarName.Text);
+            
         }
 
         //選択されているメーカーの列挙型を返す
@@ -149,6 +148,8 @@ namespace CarReportSystem {
             this.carReportBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.infosys202124DataSet);
 
+            setCbAuthor(cbAuthor.Text);
+            setCbCarName(cbCarName.Text);
 
 #if false
             if (sfdFileSave.ShowDialog() == DialogResult.OK) {
@@ -171,6 +172,15 @@ namespace CarReportSystem {
         private void btConnect_Click(object sender, EventArgs e) {
 
             this.carReportTableAdapter.Fill(this.infosys202124DataSet.CarReport);
+            for (int i = 0; i < carReportDataGridView.RowCount; i++) {
+                //データグリッドビューから取得
+                //setCbAuthor((string)dgvRegistData.Rows[i].Cells[1].Value);
+                //setCbCarName((string)dgvRegistData.Rows[i].Cells[3].Value);
+                setCbAuthor(carReportDataGridView.Rows[i].Cells[2].Value.ToString());
+                setCbCarName(carReportDataGridView.Rows[i].Cells[4].Value.ToString());
+
+
+            }
 #if false
 
     (ofdFileOpen.ShowDialog() == DialogResult.OK) {
@@ -199,7 +209,12 @@ namespace CarReportSystem {
 
         private void fmMain_Load(object sender, EventArgs e) {
             carReportDataGridView.Columns[0].Visible = false;
-            carReportDataGridView.Columns[2].HeaderText = "日付";
+            carReportDataGridView.Columns[1].HeaderText = "日付";
+            carReportDataGridView.Columns[2].HeaderText = "記録者";
+            carReportDataGridView.Columns[3].HeaderText = "メーカー";
+            carReportDataGridView.Columns[4].HeaderText = "車名";
+            carReportDataGridView.Columns[5].HeaderText = "レポート";
+            carReportDataGridView.Columns[6].Visible = false;
 
         }
 
